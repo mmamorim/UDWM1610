@@ -25,3 +25,20 @@ Entrar na pasta criada
 e para rodar 
 
 ```npm run dev```
+
+
+## Para instalar o bootstrap
+
+npm install bootstrap
+
+```
+// src/main.js
+import { createApp } from "vue";
+import App from "./App.vue";
+
+import "bootstrap/dist/css/bootstrap.css";
+
+createApp(App).mount("#app");
+
+import "bootstrap/dist/js/bootstrap.js";
+```
