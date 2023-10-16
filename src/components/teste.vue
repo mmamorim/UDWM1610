@@ -1,6 +1,6 @@
 <template>
     <div>
-        Teste {{ contador }} 
+        Teste {{ contador }} e 2x contador= {{ if(contador) }} 
         <button @click="incrementar">Incrementa</button>
 
         <input type="text" v-model="caixa_nome"/>
