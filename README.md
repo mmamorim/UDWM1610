@@ -29,7 +29,9 @@ e para rodar
 
 ## Para instalar o bootstrap
 
-npm install bootstrap
+executar: 
+
+```npm install bootstrap```
 
 ```
 // src/main.js
@@ -41,4 +43,27 @@ import "bootstrap/dist/css/bootstrap.css";
 createApp(App).mount("#app");
 
 import "bootstrap/dist/js/bootstrap.js";
+```
+
+## Para instalar o tailwindcss com windcss
+
+executar: 
+
+```npm install -D vite-plugin-windicss windicss```
+
+No arquivo de configuração do Vite ```vite.config.js``` adicionar:
+
+```
+import WindiCSS from 'vite-plugin-windicss'
+
+export default {
+  plugins: [
+    WindiCSS(),
+  ],
+}
+```
+No arquivo ```vite.config.js``` adicionar:
+
+```
+import 'virtual:windi.css'
 ```
