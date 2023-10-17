@@ -62,7 +62,7 @@ export default {
   ],
 }
 ```
-No arquivo ```vite.config.js``` adicionar:
+No arquivo ```main.js``` adicionar:
 
 ```
 import 'virtual:windi.css'
