@@ -1,15 +1,15 @@
 <template>
   <div>
-    oi gente 
-    <teste />
+    Meu App 
+    <Card />
   </div>
 </template>
 
 <script>
-import teste from "./components/teste.vue"
+import Card from "./components/Card.vue"
 
 export default {
-  components: { teste }
+  components: { Card }
 }
 </script>
 
