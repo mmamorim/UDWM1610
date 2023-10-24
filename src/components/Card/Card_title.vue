@@ -1,10 +1,10 @@
 <template>
-    <h1 class="p-1 m-1 rounded bg-gray-200">
+    <h2 class="p-1 m-1 rounded bg-gray-200">
         <span class="text-lg border bg-white">
             {{ icon }}
         </span>
         {{ title }}
-    </h1>
+    </h2>
 </template>
 <script>
 export default {
