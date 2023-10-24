@@ -67,3 +67,8 @@ No arquivo ```main.js``` adicionar:
 ```
 import 'virtual:windi.css'
 ```
+
+## Aula 23/10
+
+* Componentes aninhados
+* Passando propriedades para componentes (props)
