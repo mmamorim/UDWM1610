@@ -1,30 +1,52 @@
 <template>
   <div>
     <h2>
-      {{ title }}
+      Teste de persistência
     </h2>
-    <div class="grid grid-cols-3">
-      <div v-for="item in cards">
-        <Card :item="item"/>
+    <div class="m-1 p-1 border rounded">
+      <div class="bg-gray-200 p-1">
+        você gosta de 
+        <span class="p-1 rounded bg-orange-200">
+          {{ fruta }}
+        </span>
       </div>
+      <span class="text-lg mr-1">Nome da fruta prefrida:</span>
+      <input type="text" v-model="caixaFruta" class="border p-1 m-1"/>
+      <button @click="salvarFruta" class="btn btn-primary">Alterar fruta</button>
     </div>
   </div>
 </template>
 
 <script>
-import Card from "./components/Card/Card.vue"
 
 export default {
-  components: { Card },
+  components: { },
   data() {
     return {
-      title: "Meus cartões",
-      cards: [
-        { title: 'Banana', icon: 'XX', body: 'texto do corpo' },
-        { title: 'Abacate', icon: 'XX', body: 'dsdsdsd' },
-        { title: 'Cebola', icon: 'XX', body: 'erererer' },
-        { title: 'Agrião', icon: 'XX', body: 'Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.' },
-      ]
+      fruta: "Não sei",
+      caixaFruta: "Alguma coisa"
+    }
+  },
+  mounted() {
+    this.load()
+  },
+  methods: {
+    
+    async load() {
+      console.log("passei no load....");
+      let valor = localStorage.getItem("FrutaPreferida")
+      console.log("valor",valor)
+      if(valor == null) {
+        this.fruta = "não sei"
+      } else {
+        this.fruta = valor
+      }
+    },
+
+    salvarFruta() {
+      console.log("salvarFruta",this.caixaFruta)
+      localStorage.setItem("FrutaPreferida",this.caixaFruta)
+      this.fruta = this.caixaFruta
     }
   },
 }
