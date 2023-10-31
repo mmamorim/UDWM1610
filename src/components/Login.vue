@@ -33,7 +33,7 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             Cancelar
                         </button>
-                        <button @click="login" type="button" class="btn btn-primary">
+                        <button @click="login" type="button" class="btn btn-primary" data-bs-dismiss="modal">
                             Login
                         </button>
                     </div>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import model from "../Model/Model"
 
 export default {
     data() {
@@ -54,7 +55,13 @@ export default {
     },
     methods: {
         login() {
-            
+            let user = model.checkLogin(this.email,this.senha)
+            console.log("user",user);
+            if(user != null) {
+                let userStr = JSON.stringify(user)
+                localStorage.setItem("user",userStr)
+                this.$emit('onLogin',user)
+            } 
         }
     }
 }
